@@ -5,8 +5,10 @@ var montant;
 function client() {
     nom = prompt("Entrez votre nom");
     montant = Number(prompt("Entrez votre solde"));
-    for(var i = 0; i < 5; i++){
-    document.getElementById("compte"+ i).innerHTML = nom + " : " + montant + "$";}
+    var liElement = document.createElement('li');
+    var content = document.createTextNode(nom + " : " + montant + "$");
+    liElement.appendChild(content);
+    document.getElementById("comptes").appendChild(liElement);
 
 };
 
@@ -14,7 +16,7 @@ function client() {
 function crediter() {
     var credit = Number(prompt("Entrez le montant à créditer"));
     montant = credit + montant;
-    document.getElementById("compte1").innerHTML = nom + " a maintenant " + montant + "$";
+    document.getElementById("comptes").innerHTML = nom + " a maintenant " + montant + "$";
         
 };
 
@@ -22,7 +24,7 @@ function crediter() {
 function debiter() {
     var debit = Number(prompt("Entrez le montant à débiter"));
     montant = montant - debit;
-    document.getElementById("compte2").innerHTML = nom + " a désormais " + montant + "$";
+    document.getElementById("comptes").innerHTML = nom + " a désormais " + montant + "$";
 
 };
 
