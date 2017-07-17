@@ -5,10 +5,20 @@ var montant;
 function client() {
     nom = prompt("Entrez votre nom");
     montant = Number(prompt("Entrez votre solde"));
-    var liElement = document.createElement('li');
+    var liElement = document.createElement("li");
     var content = document.createTextNode(nom + " : " + montant + "$");
     liElement.appendChild(content);
     document.getElementById("comptes").appendChild(liElement);
+
+    var buttonElement = document.createElement('button', {"id" : "buttonCrediter"});
+    var content = document.createTextNode("Créditer");
+    buttonElement.appendChild(content);
+    document.getElementById("comptes").appendChild(buttonElement);
+
+    var buttonElement = document.createElement('button', {"id" : "buttonDebiter"});
+    var content = document.createTextNode("Débiter");
+    buttonElement.appendChild(content);
+    document.getElementById("comptes").appendChild(buttonElement);
 
 };
 
